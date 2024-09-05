@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guidance Residential</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    height: 50px; /* Adjust height as needed */
+    width: auto;
+}
+
+.nav {
+    display: flex;
+    background-color: transparent; /* No background color */
+    padding: 0;
+}
+
+.nav a {
+    color: #333;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    margin-top: 60px; /* Adjust margin for fixed header */
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: rgba(24, 49, 68, 0.7); */
+    /* padding: 30px; */
+    /* border-radius: 15px; */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); */
+    max-width: 90%;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #004d40;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin: 0 0 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.hero-buttons a {
+    background-color: #ffcc00;
+    color: #003399;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-buttons a:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.section p {
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature img {
+    width: 90%
+    margin-bottom: 15px;
+}
+
+.feature h4 {
+    color: #00796b;
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.feature p {
+    color: #666;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.option {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #f1f8e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.option h3 {
+    color: #00796b;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.option p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.option ul {
+    list-style: none;
+    padding: 0;
+    color: #666;
+}
+
+.option ul li {
+    margin-bottom: 10px;
+}
+
+.option a {
+    display: block;
+    background-color: #ffcc00;
+    color: #003399;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.option a:hover {
+    background-color: #e6b800;
+}
+
+.coming-soon {
+    background-color: #ffffff;
+    color: #030303;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coming-soon h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #004d40;
+}
+
+.coming-soon p {
+    margin-bottom: 30px;
+    font-size: 1.3em;
+    color: #666;
+}
+
+.interest-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest-form input,
+.interest-form select,
+.interest-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.interest-form button {
+    background-color: #ffcc00;
+    color: #003399;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.interest-form button:hover {
+    background-color: #e6b800;
+}
+
+.footer {
+    background: linear-gradient(to bottom, hsl(172, 54%, 34%) 0%, hsl(172, 54%, 34%) 80%, #003399 100%);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer h2 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.footer p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.footer img {
+    height: 50px;
+    margin: 0 10px;
+}
+
+.footer a {
+    display: block;
+    background-color: #003399;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 220px;
+    transition: background-color 0.3s ease;
+}
+
+.footer a:hover {
+    background-color: #002d72;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <img alt="Co-ownership icon" src="greensure.png"/>
+    <div class="nav">
+        <a href="#coming-soon">Contact Us</a>
+        <a href="#feature">About Us</a>
+        <a href="#options">Our Process</a>
+        <a href="#coming-soon">Join Us</a>
+    </div>
+</div>
+<div class="hero">
+    <img id="hash" alt="Aerial view of a house" src="lem.png">
+    <div class="hero-text">
+        <h1>Guaranteed Insurance that Invests in Your Future</h1>
+        <p>Consistent with Your Values</p>
+        <p>The Only Fully Transparent Coverage Policy</p>
+        <div class="hero-buttons">
+            <a href="#coming-soon">Join Waiting List</a>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h2>What Makes Greensurance Different?</h2>
+    <p>Greensurance, a new-innovative concept, offers an auto insurance policy where your premiums are invested on your behalf, unlike conventional insurance where your money is wasted. Additionally, our invite-only members guarantee each other converage in times of loss, so you never have to worry</p>
+    <div class="features">
+        <div class="feature">
+            <img alt="Co-ownership icon" src="https://cdn2.guidanceresidential.com/images/home/icon6.png?id=283c10b6383cf8a7ae02"/>
+            <h4>Premiums Act as Investment</h4>
+            <p>Your monthly premiums are pooled together with other members and the profits are returned to you!</p>
+        </div>
+        <div class="feature">
+            <img alt="Risk Sharing icon" src="https://cdn2.guidanceresidential.com/images/home/icon2.png?id=ee6981e88084f09aea6f"/>
+            <h4>Accident? Guaranteed Coverage</h4>
+            <p>Unlike conventional insurance, which comes with uncertainty wether claim will be paid out, our members share in the responsibility and will cover you through the pool, investments, or deductibles.</p>
+        </div>
+        <div class="feature">
+            <img alt="Riba-free icon" src="https://cdn2.guidanceresidential.com/images/home/icon3.png?id=c8772e70f8303c8e471e"/>
+            <h4>Accidents Don’t Raise Your Premium</h4>
+            <p>Have peace of mind, we never raise premiums after paying out claims.</p>
+        </div>
+        <div class="feature">
+            <img alt="No Pre-payment Penalty icon" src="https://cdn2.guidanceresidential.com/images/home/icon8.png?id=a4c05e0f75db69277355"/>
+            <h4>Fully Transparent</h4>
+            <p>With our blockchain technology and mobile app, you can see our premium pool, investments, and claims paid out so you know nothing shady is going on!</p>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h2>A Community and Technology First Approach</h2>
+    <p>What our insurance coverage has to offer</p>
+    <div class="options">
+        <div class="option">
+            <h3>Get a quote fast</h3>
+            <p>Get a premium quote quickly through our website</p>
+            <a href="#">Coming Soon</a>
+        </div>
+        <div class="option">
+            <h3>File a claim through the App</h3>
+            <p>Snap a photo of your damage and our agent will issue you a payout after verification</p>
+            <a href="#">Get Pre-Approved</a>
+        </div>
+        <div class="option">
+            <h3>Save money</h3>
+            <p>Our innovative insurance method allows us to offer the lowest monthly premiums</p>
+            <a href="#">Coming Soon</a>
+        </div>
+    </div>
+</div>
+<div id="coming-soon" class="coming-soon">
+    <h2>Coming Soon</h2>
+    <p>We're excited to bring you new and improved services soon! To stay updated and be among the first to know, please fill out the interest form below.</p>
+    <form class="interest-form" action="/submit-form" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="location" placeholder="Your Location" required />
+        <input type="number" name="policy_count" placeholder="Number of People on Insurance Policy" required />
+        <input type="number" name="vehicles" placeholder="Number of Vehicles" required />
+        <input type="number" name="age" placeholder="Your Age" required />
+        <textarea name="comments" placeholder="Additional Comments" rows="4"></textarea>
+        <button type="submit">Submit Your Interest</button>
+    </form>
+</div>
+<div class="footer">
+    <h2>Stay Connected</h2>
+    <p>+15105654327</p>
+    <div>
+        <a href="#" class="footer-link">Email</a>
+        <a href="#" class="footer-link">Instagram</a>
+        <a href="#" class="footer-link">LinkedIn</a>
+    </div>
+    <p>&copy; 2024 Greensurance Residential. All Rights Reserved.</p>
+</div>
+</body>
+</html>
