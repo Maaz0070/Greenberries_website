@@ -92,10 +92,10 @@ body {
 }
 
 .hero-text p {
-    font-size: 5em;
+    font-size: 1.2em;
     margin: 0 0 20px;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.4;
     color: #666;
 }
 
@@ -106,7 +106,7 @@ body {
 .hero-buttons a {
     background-color: #ffcc00;
     color: #003399;
-    padding: 12px 20px;
+    padding: 10px 15px;
     text-decoration: none;
     font-weight: 700;
     border-radius: 10px;
@@ -210,7 +210,6 @@ body {
 .option a:hover {
     background-color: #e6b800;
 }
-
 
 .coming-soon {
     background-color: #ffffff;
@@ -321,7 +320,6 @@ body {
     background-color: #002d72;
 }
 
-
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .header .nav {
@@ -339,7 +337,7 @@ body {
     }
 
     .hero-text p {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     .hero-buttons a {
@@ -360,43 +358,46 @@ body {
     }
 
     .feature, .option {
-        flex: 1 1 calc(25% - 20px);
+        flex: 1 1 calc(33.333% - 20px); /* Three columns with spacing */
+        margin: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    .header .nav a {
-        margin: 0 10px;
-    }
-
     .hero-text h1 {
-        font-size: 2.5em;
+        font-size: 2em; /* Adjusted font size for better readability on mobile */
     }
 
     .hero-text p {
-    font-size: 700; /* Make the font size larger */
-    font-weight: 500; /* Add a bit of boldness for consistency */
-}
-
+        font-size: 1.2em; /* Adjusted font size for better readability on mobile */
+        line-height: 1.4; /* Improved line height for better readability */
+    }
 
     .hero-buttons a {
-        padding: 12px 20px;
+        padding: 10px 15px; /* Reduced padding for smaller screens */
     }
 
     .section h2 {
-        font-size: 2em;
+        font-size: 1.8em; /* Adjusted font size for better readability on mobile */
     }
 
     .section p {
-        font-size: 1em;
+        font-size: 0.9em; /* Adjusted font size for better readability on mobile */
     }
 
     .features, .options {
-        flex-direction: column;
+        flex-direction: column; /* Ensure elements stack vertically on smaller screens */
     }
 
     .feature, .option {
         flex: 1 1 auto;
+        margin: 10px 0; /* Added margin for better spacing */
+    }
+
+    .footer a {
+        width: auto; /* Allow links to be more flexible */
+        display: inline-block; /* Ensure links are clickable */
+        margin: 10px 0; /* Added margin for better spacing */
     }
 }
 </style>
