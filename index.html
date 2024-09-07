@@ -20,8 +20,8 @@ body {
 .header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* Center items and space them evenly */
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.8);
     color: #333;
@@ -30,36 +30,81 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo and Name */
+.header .logo,
+.header .name {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
 .header .logo img {
     height: 50px;
     width: auto;
 }
 
+/* Name */
 .header .name img {
     height: 50px;
     width: auto;
 }
 
+/* Navigation */
 .header .nav {
-    text-align: right;
-    flex-basis: 100%;
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between links */
 }
 
 .header .nav a {
     color: #333;
-    margin: 0 10px;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease;
 }
 
+/* Navigation link hover state */
 .header .nav a:hover {
     color: #ffcc00;
 }
 
+/* Mobile Menu Button */
+.header .menu-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Mobile Menu */
+.header .mobile-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.header .mobile-nav a {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Show mobile menu */
+.header .mobile-nav.show {
+    display: flex;
+}
+
+/* Hero Section */
 .hero {
     position: relative;
     text-align: center;
@@ -119,6 +164,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* Section Styling */
 .section {
     padding: 60px 20px;
     text-align: center;
@@ -138,6 +184,7 @@ body {
     font-size: 1em;
 }
 
+/* Features and Options */
 .features, .options {
     display: flex;
     flex-direction: column;
@@ -145,10 +192,10 @@ body {
 }
 
 .feature, .option {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #e0e0e0; /* Light border */
+    border: 1px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -171,19 +218,19 @@ body {
 }
 
 .option {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #e0e0e0; /* Light border */
+    border: 1px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center text and images */
+    text-align: center;
 }
 
 .option img {
     max-width: 100%;
     height: auto;
-    display: inline-block; /* Center images */
-    margin: 0 auto; /* Center images horizontally */
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .option h3 {
@@ -211,6 +258,7 @@ body {
     background-color: #e6b800;
 }
 
+/* Coming Soon Section */
 .coming-soon {
     background-color: #ffffff;
     color: #030303;
@@ -232,6 +280,7 @@ body {
     color: #666;
 }
 
+/* Interest Form */
 .interest-form {
     max-width: 100%;
     margin: 0 auto;
@@ -279,6 +328,7 @@ body {
     background-color: #e6b800;
 }
 
+/* Footer Styling */
 .footer {
     background: linear-gradient(to bottom, #029786 0%, #00796b 50%, #000404 100%);
     color: #fff;
@@ -323,9 +373,7 @@ body {
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .header .nav {
-        text-align: right;
-        flex-basis: auto;
-        margin-top: 0;
+        flex-direction: row; /* Align nav items in a row */
     }
 
     .header .nav a {
@@ -364,6 +412,28 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center text in header */
+    }
+
+    .header .logo, .header .name {
+        margin-bottom: 10px;
+    }
+
+    .header .menu-button {
+        display: block;
+    }
+
+    .header .nav {
+        display: none;
+    }
+
+    .header .mobile-nav {
+        display: flex;
+    }
+
     .hero-text h1 {
         font-size: 2em; /* Adjusted font size for better readability on mobile */
     }
