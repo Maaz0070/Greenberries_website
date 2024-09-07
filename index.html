@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Guidance Residential</title>
+<title>greenlight insurance</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
+/* General styling */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -17,39 +18,45 @@ body {
 }
 
 .header {
-    background: rgba(255, 255, 255, 0.8); /* Transparent white background */
-    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.header img {
-    height: 50px; /* Adjust height as needed */
+.header .logo img {
+    height: 50px;
     width: auto;
 }
 
-.nav {
-    display: flex;
-    background-color: transparent; /* No background color */
-    padding: 0;
+.header .name img {
+    height: 50px;
+    width: auto;
 }
 
-.nav a {
+.header .nav {
+    text-align: right;
+    flex-basis: 100%;
+    margin-top: 10px;
+}
+
+.header .nav a {
     color: #333;
-    margin: 0 15px;
+    margin: 0 10px;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.header .nav a:hover {
     color: #ffcc00;
 }
 
@@ -57,11 +64,12 @@ body {
     position: relative;
     text-align: center;
     color: #fff;
-    margin-top: 60px; /* Adjust margin for fixed header */
+    margin-top: 60px;
     overflow: hidden;
 }
 
 .hero img {
+    height: 50%;
     width: 100%;
     display: block;
 }
@@ -71,26 +79,23 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background: rgba(24, 49, 68, 0.7); */
-    /* padding: 30px; */
-    /* border-radius: 15px; */
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); */
     max-width: 90%;
     text-align: center;
 }
 
 .hero-text h1 {
-    font-size: 3em;
+    font-size: 2em;
     margin: 0 0 20px;
     font-weight: 700;
     line-height: 1.2;
-    color: #004d40;
+    color: #00796b;
 }
 
 .hero-text p {
-    font-size: 1.2em;
-    margin: 0 0 15px;
-    line-height: 1.6;
+    font-size: 5em;
+    margin: 0 0 20px;
+    font-weight: 700;
+    line-height: 1.2;
     color: #666;
 }
 
@@ -101,11 +106,11 @@ body {
 .hero-buttons a {
     background-color: #ffcc00;
     color: #003399;
-    padding: 15px 30px;
+    padding: 12px 20px;
     text-decoration: none;
     font-weight: 700;
     border-radius: 10px;
-    margin: 0 10px;
+    margin: 0 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -122,83 +127,73 @@ body {
 }
 
 .section h2 {
-    color: #004d40;
+    color: #00796b;
     margin-bottom: 20px;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .section p {
     color: #666;
     margin-bottom: 40px;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
-.features {
+.features, .options {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
 }
 
-.feature {
-    flex: 1 1 calc(25% - 20px);
-    background-color: #e0f2f1;
+.feature, .option {
+    background-color: #ffffff; /* White background */
     padding: 20px;
     border-radius: 10px;
+    border: 1px solid #e0e0e0; /* Light border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.feature img {
-    width: 90%
-    margin-bottom: 15px;
+.feature img, .option img {
+    max-width: 100%;
+    height: auto;
 }
 
-.feature h4 {
+.feature h4, .option h3 {
     color: #00796b;
     margin-bottom: 10px;
-    font-size: 1.6em;
-}
-
-.feature p {
-    color: #666;
+    font-size: 1.4em;
 }
 
 .options {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
 }
 
 .option {
-    flex: 1 1 calc(25% - 20px);
-    background-color: #f1f8e9;
+    background-color: #ffffff; /* White background */
     padding: 20px;
     border-radius: 10px;
+    border: 1px solid #e0e0e0; /* Light border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    text-align: center; /* Center text and images */
+}
+
+.option img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block; /* Center images */
+    margin: 0 auto; /* Center images horizontally */
 }
 
 .option h3 {
     color: #00796b;
-    margin-bottom: 15px;
-    font-size: 1.6em;
+    margin-bottom: 10px;
+    font-size: 1.4em;
 }
 
 .option p {
     color: #666;
-    margin-bottom: 20px;
-}
-
-.option ul {
-    list-style: none;
-    padding: 0;
-    color: #666;
-}
-
-.option ul li {
-    margin-bottom: 10px;
 }
 
 .option a {
@@ -216,6 +211,7 @@ body {
     background-color: #e6b800;
 }
 
+
 .coming-soon {
     background-color: #ffffff;
     color: #030303;
@@ -227,23 +223,29 @@ body {
 
 .coming-soon h2 {
     margin-bottom: 20px;
-    font-size: 2.5em;
-    color: #004d40;
+    font-size: 2em;
+    color: #00796b;
 }
 
 .coming-soon p {
     margin-bottom: 30px;
-    font-size: 1.3em;
+    font-size: 1em;
     color: #666;
 }
 
 .interest-form {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.interest-form h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #00796b;
 }
 
 .interest-form input,
@@ -254,6 +256,12 @@ body {
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.interest-form select {
+    cursor: pointer;
 }
 
 .interest-form button {
@@ -273,7 +281,7 @@ body {
 }
 
 .footer {
-    background: linear-gradient(to bottom, hsl(172, 54%, 34%) 0%, hsl(172, 54%, 34%) 80%, #003399 100%);
+    background: linear-gradient(to bottom, #029786 0%, #00796b 50%, #000404 100%);
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -283,11 +291,11 @@ body {
 .footer h2 {
     color: #ffcc00;
     margin-bottom: 20px;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .footer p {
-    color: #ccc;
+    color: #ffcc00;
     margin-bottom: 30px;
 }
 
@@ -312,23 +320,104 @@ body {
 .footer a:hover {
     background-color: #002d72;
 }
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .header .nav {
+        text-align: right;
+        flex-basis: auto;
+        margin-top: 0;
+    }
+
+    .header .nav a {
+        margin-left: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 3em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons a {
+        padding: 15px 30px;
+    }
+
+    .section h2 {
+        font-size: 2.5em;
+    }
+
+    .section p {
+        font-size: 1.2em;
+    }
+
+    .features, .options {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .feature, .option {
+        flex: 1 1 calc(25% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header .nav a {
+        margin: 0 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-text p {
+    font-size: 700; /* Make the font size larger */
+    font-weight: 500; /* Add a bit of boldness for consistency */
+}
+
+
+    .hero-buttons a {
+        padding: 12px 20px;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+
+    .features, .options {
+        flex-direction: column;
+    }
+
+    .feature, .option {
+        flex: 1 1 auto;
+    }
+}
 </style>
 </head>
 <body>
 <div class="header">
-    <img alt="Co-ownership icon" src="greensure.png"/>
+    <div class="logo">
+        <img alt="Co-ownership icon" src="img.png"/>
+    </div>
+    <div class="name">
+        <img alt="Greensurance Logo" src="name.png"/>
+    </div>
     <div class="nav">
-        <a href="#coming-soon">Contact Us</a>
-        <a href="#feature">About Us</a>
-        <a href="#options">Our Process</a>
-        <a href="#coming-soon">Join Us</a>
+        <a href="#coming-soon">Join</a>
     </div>
 </div>
 <div class="hero">
     <img id="hash" alt="Aerial view of a house" src="lem.png">
     <div class="hero-text">
-        <h1>Guaranteed Insurance that Invests in Your Future</h1>
-        <p>Consistent with Your Values</p>
+        <h1>Community Insurance that Invests in Your Future</h1>
+        <p>Designed with community principles</p>
         <p>The Only Fully Transparent Coverage Policy</p>
         <div class="hero-buttons">
             <a href="#coming-soon">Join Waiting List</a>
@@ -336,47 +425,50 @@ body {
     </div>
 </div>
 <div class="section">
-    <h2>What Makes Greensurance Different?</h2>
-    <p>Greensurance, a new-innovative concept, offers an auto insurance policy where your premiums are invested on your behalf, unlike conventional insurance where your money is wasted. Additionally, our invite-only members guarantee each other converage in times of loss, so you never have to worry</p>
+    <h2>What Makes greenlight insurance Different?</h2>
+    <p>greenlight insurance, a decentralized service, beleives your money belongs to you. Unlike interest-based conventional insurance, member premiums are invested and the returns are paid back to you via smart contracts! In this model, instead of a third-party selecting which claims to insure, our invite-only members insure each other in times of loss either through the premium pool, investments or deductibles - so you never have to worry about claim denials!</p>
     <div class="features">
         <div class="feature">
             <img alt="Co-ownership icon" src="https://cdn2.guidanceresidential.com/images/home/icon6.png?id=283c10b6383cf8a7ae02"/>
             <h4>Premiums Act as Investment</h4>
-            <p>Your monthly premiums are pooled together with other members and the profits are returned to you!</p>
+            <p>Your monthly premiums are pooled together with other members, a portion is invested, and the profits are returned to you! We simply collect a percentage of proifts to cover fees</p>
         </div>
         <div class="feature">
-            <img alt="Risk Sharing icon" src="https://cdn2.guidanceresidential.com/images/home/icon2.png?id=ee6981e88084f09aea6f"/>
+            <img alt="Risk Sharing icon" src="https://cdn2.guidanceresidential.com/images/home/icon7.png?id=8c37831f8bbbd939568e"/>
             <h4>Accident? Guaranteed Coverage</h4>
-            <p>Unlike conventional insurance, which comes with uncertainty wether claim will be paid out, our members share in the responsibility and will cover you through the pool, investments, or deductibles.</p>
-        </div>
-        <div class="feature">
-            <img alt="Riba-free icon" src="https://cdn2.guidanceresidential.com/images/home/icon3.png?id=c8772e70f8303c8e471e"/>
-            <h4>Accidents Don’t Raise Your Premium</h4>
-            <p>Have peace of mind, we never raise premiums after paying out claims.</p>
+            <p>Unlike conventional insurance, in which the insurance company decides wether a claim is paid out, our members insure each other - either through the reserves, investments, or deductibles.</p>
         </div>
         <div class="feature">
             <img alt="No Pre-payment Penalty icon" src="https://cdn2.guidanceresidential.com/images/home/icon8.png?id=a4c05e0f75db69277355"/>
             <h4>Fully Transparent</h4>
-            <p>With our blockchain technology and mobile app, you can see our premium pool, investments, and claims paid out so you know nothing shady is going on!</p>
+            <p>With our blockchain technology and mobile app, you can see our premium pool, investments, and paid out claims so you know nothing shady is going on!</p>
+        </div>
+        <div class="feature">
+            <img alt="Riba-free icon" src="https://cdn2.guidanceresidential.com/images/home/icon5.png?id=136bff5d3604b1c68766"/>
+            <h4>Accidents Don’t Raise Your Premium</h4>
+            <p>Have peace of mind, we never raise premiums after paying out claims.</p>
         </div>
     </div>
 </div>
 <div class="section">
-    <h2>A Community and Technology First Approach</h2>
+    <h2>Blockchain Smart Contracts to Eliminate Middle Men</h2>
     <p>What our insurance coverage has to offer</p>
     <div class="options">
         <div class="option">
             <h3>Get a quote fast</h3>
-            <p>Get a premium quote quickly through our website</p>
+            <img alt="Riba-free icon" src="image.png"/>
+            <p>Our AI automatically analyzes your details and will give you a instant quote on your expected premium payments</p>
             <a href="#">Coming Soon</a>
         </div>
         <div class="option">
             <h3>File a claim through the App</h3>
-            <p>Snap a photo of your damage and our agent will issue you a payout after verification</p>
-            <a href="#">Get Pre-Approved</a>
+            <img alt="Riba-free icon" src="image copy.png"/>
+            <p>Snap a photo of your damage and our smart contract will issue you a payout after verification</p>
+            <a href="#">Coming Soon</a>
         </div>
         <div class="option">
             <h3>Save money</h3>
+            <img alt="Riba-free icon" src="image copy 2.png"/>
             <p>Our innovative insurance method allows us to offer the lowest monthly premiums</p>
             <a href="#">Coming Soon</a>
         </div>
@@ -386,11 +478,89 @@ body {
     <h2>Coming Soon</h2>
     <p>We're excited to bring you new and improved services soon! To stay updated and be among the first to know, please fill out the interest form below.</p>
     <form class="interest-form" action="mailto:maazadil786@gmail.com" method="post">
+        <h2>Submit Your Interest</h2>
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
-        <input type="text" name="location" placeholder="Your Location" required />
-        <input type="number" name="policy_count" placeholder="Number of People on Insurance Policy" required />
-        <input type="number" name="vehicles" placeholder="Number of Vehicles" required />
+        <input type="text" name="city" placeholder="City" required />
+        <select name="state" required>
+            <option value="" disabled selected>Select Your State</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+        </select>
+        <select name="policy_count" required>
+            <option value="" disabled selected>Number of People on Insurance Policy</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+        <select name="vehicles" required>
+            <option value="" disabled selected>Number of Vehicles</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
         <input type="number" name="age" placeholder="Your Age" required />
         <textarea name="comments" placeholder="Additional Comments" rows="4"></textarea>
         <button type="submit">Submit Your Interest</button>
@@ -401,10 +571,10 @@ body {
     <p>+15105654327</p>
     <div>
         <a href="#" class="footer-link">Email</a>
-        <a href="#" class="footer-link">Instagram</a>
+        <a href="https://www.instagram.com/greenlight.io/?igsh=MzRlODBiNWFlZA%3D%3D" class="footer-link">Instagram</a>
         <a href="#" class="footer-link">LinkedIn</a>
     </div>
-    <p>&copy; 2024 Greensurance Residential. All Rights Reserved.</p>
+    <p>&copy; 2024 greenlight. All rights reserved.</p>
 </div>
 </body>
 </html>
